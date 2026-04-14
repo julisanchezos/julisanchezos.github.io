@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julian Sanchez — Flutter & Mobile Developer</title>
-<meta name="description" content="Julian Sanchez — Flutter & Mobile Developer with 5 years of experience building cross-platform apps.">
+<title>Julian Sanchez — Desarrollador Full-Stack</title>
+<meta name="description" content="Julian Sanchez — Desarrollador Full-Stack y Diseñador. Construyendo experiencias digitales con tecnologías modernas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -22,11 +22,13 @@
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
 
+/* CUSTOM CURSOR */
 .cursor{position:fixed;width:20px;height:20px;border:2px solid var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .15s ease,opacity .15s ease;transform:translate(-50%,-50%)}
 .cursor-dot{position:fixed;width:5px;height:5px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
 .cursor.hover{transform:translate(-50%,-50%) scale(2.5);background:rgba(201,243,29,.1);border-color:var(--accent)}
 @media(max-width:768px){.cursor,.cursor-dot{display:none}body{cursor:auto}}
 
+/* SPLASH SCREEN */
 .splash{position:fixed;inset:0;background:var(--bg);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease}
 .splash.hidden{opacity:0;visibility:hidden}
 .splash-logo{font-family:var(--font2);font-size:clamp(2rem,5vw,4rem);font-weight:700;color:var(--text);overflow:hidden}
@@ -48,16 +50,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:h
 @keyframes slideUp{to{transform:translateY(0)}}
 @keyframes loadBar{to{width:200px}}
 
-.lang-toggle{display:flex;align-items:center;background:var(--bg3);border:1px solid var(--border);border-radius:100px;overflow:hidden;margin-left:8px}
-.lang-btn{padding:6px 14px;font-size:.75rem;font-weight:600;font-family:var(--mono);background:transparent;color:var(--text3);border:none;cursor:pointer;transition:all .3s ease;letter-spacing:.05em}
-.lang-btn.active{background:var(--accent);color:#0a0a0a}
-.lang-btn:hover:not(.active){color:var(--text2)}
-
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s ease;backdrop-filter:blur(0px)}
 nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 48px}
 .nav-logo{font-family:var(--font2);font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-.02em}
 .nav-logo em{font-style:normal;color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:8px}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{color:var(--text2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .3s ease;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--accent);transition:width .3s ease}
@@ -73,10 +70,9 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bot
   .nav-links a{font-size:1.5rem}
   .menu-btn{display:block;z-index:1001}
   nav{padding:16px 24px}
-  .nav-right{gap:4px}
-  .lang-btn{padding:5px 10px;font-size:.7rem}
 }
 
+/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;padding:0 48px;position:relative;overflow:hidden}
 .hero-content{max-width:900px;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--border);border-radius:100px;font-size:.8rem;color:var(--text2);margin-bottom:32px;font-family:var(--mono)}
@@ -93,9 +89,11 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bot
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:100px;font-weight:500;font-size:.95rem;text-decoration:none;transition:all .3s ease;font-family:var(--font)}
 .btn-secondary:hover{border-color:var(--text2);transform:translateY(-2px)}
 
+/* HERO VISUAL */
 .hero-visual{position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:45%;height:70%;opacity:.15;pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
 
+/* STATS */
 .stats{display:flex;gap:48px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
 .stat-item h3{font-family:var(--font2);font-size:clamp(2rem,3vw,3rem);font-weight:700;color:var(--text)}
 .stat-item h3 .counter{display:inline}
@@ -103,6 +101,7 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);border-bot
 .stat-item p{color:var(--text3);font-size:.85rem;margin-top:4px;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
 @media(max-width:768px){.hero{padding:0 24px}.stats{flex-wrap:wrap;gap:32px}}
 
+/* SECTIONS */
 section{padding:120px 48px}
 .section-header{margin-bottom:80px}
 .section-label{font-family:var(--mono);font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px;display:flex;align-items:center;gap:12px}
@@ -110,16 +109,17 @@ section{padding:120px 48px}
 .section-title{font-family:var(--font2);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
 @media(max-width:768px){section{padding:80px 24px}}
 
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .about-text{font-size:1.1rem;color:var(--text2);line-height:1.8;font-weight:300}
 .about-text strong{color:var(--text);font-weight:600}
 .about-text p+p{margin-top:20px}
 .about-image{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--bg2);border:1px solid var(--border)}
-.about-image img{width:100%;height:100%;object-fit:cover}
 .about-image-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--text3);font-size:.85rem;flex-direction:column;gap:8px;background:linear-gradient(135deg,var(--bg2),var(--bg3))}
-.about-image-placeholder .initials{font-family:var(--font2);font-size:5rem;font-weight:800;color:var(--accent);opacity:.3}
+.about-image-placeholder svg{width:48px;height:48px;stroke:var(--text3)}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:40px}}
 
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
 .skill-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .4s ease;position:relative;overflow:hidden}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .4s ease;transform-origin:left}
@@ -131,24 +131,31 @@ section{padding:120px 48px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .skill-tags span{padding:4px 12px;background:rgba(201,243,29,.06);border:1px solid rgba(201,243,29,.15);border-radius:100px;font-size:.75rem;color:var(--accent);font-family:var(--mono)}
 
-.projects-list{display:flex;flex-direction:column;gap:40px}
-.project-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .5s ease;background:var(--bg2)}
-.project-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.project-image{aspect-ratio:16/10;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
-.project-image::after{content:'';position:absolute;inset:0;background:inherit;background-size:cover;background-position:center;transition:transform .6s ease}
-.project-card:hover .project-image::after{transform:scale(1.08)}
-.project-overlay{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
-.project-logo-text{font-family:var(--font2);font-size:1.6rem;font-weight:700;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.8);letter-spacing:-.01em;text-align:center;padding:0 20px}
-.project-logo-sub{font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.2em;text-shadow:0 1px 10px rgba(0,0,0,.8)}
-.project-info{padding:40px;display:flex;flex-direction:column;justify-content:center}
-.project-year{font-family:var(--mono);font-size:.75rem;color:var(--accent);margin-bottom:12px}
-.project-info h3{font-family:var(--font2);font-size:1.5rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
-.project-client{font-family:var(--mono);font-size:.8rem;color:var(--accent);opacity:.7;margin-bottom:12px}
-.project-info p{color:var(--text2);line-height:1.7;font-size:.95rem;margin-bottom:24px}
-.project-tech{display:flex;flex-wrap:wrap;gap:8px}
-.project-tech span{padding:6px 14px;background:rgba(255,255,255,.05);border-radius:100px;font-size:.8rem;color:var(--text2);font-family:var(--mono)}
-@media(max-width:768px){.project-card{grid-template-columns:1fr}.project-info{padding:24px}}
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:36px;transition:all .4s ease;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .4s ease;transform-origin:left}
+.pcard:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.pcard:hover::before{transform:scaleX(1)}
+.pcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.pcard-company{font-family:var(--font2);font-size:1.3rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.pcard-badge{padding:5px 12px;border-radius:100px;font-size:.7rem;font-weight:600;font-family:var(--mono);letter-spacing:.03em;flex-shrink:0;white-space:nowrap}
+.pcard-badge.empleo{background:rgba(72,199,142,.12);color:#48c78e;border:1px solid rgba(72,199,142,.25)}
+.pcard-badge.freelance{background:rgba(100,149,237,.12);color:#6495ed;border:1px solid rgba(100,149,237,.25)}
+.pcard-badge.cliente{background:rgba(255,200,60,.12);color:#e8b82a;border:1px solid rgba(255,200,60,.25)}
+.pcard-badge.personal{background:rgba(201,243,29,.08);color:var(--accent);border:1px solid rgba(201,243,29,.2)}
+.pcard-project{font-family:var(--font2);font-size:1rem;font-weight:500;color:var(--accent);margin-bottom:12px}
+.pcard-role{font-size:.85rem;color:var(--text3);font-family:var(--mono);margin-bottom:16px;display:flex;align-items:center;gap:6px}
+.pcard-role svg{width:14px;height:14px;stroke:var(--text3);flex-shrink:0}
+.pcard-desc{color:var(--text2);line-height:1.7;font-size:.9rem;margin-bottom:20px}
+.pcard-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.pcard-tech span{padding:5px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;font-size:.75rem;color:var(--text2);font-family:var(--mono)}
+.pcard-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:.85rem;text-decoration:none;transition:gap .3s ease}
+.pcard-link:hover{gap:10px}
+.pcard-link svg{width:14px;height:14px}
+@media(max-width:768px){.projects-grid{grid-template-columns:1fr}}
 
+/* EXPERIENCE */
 .exp-timeline{position:relative;padding-left:32px}
 .exp-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
 .exp-item{position:relative;padding:0 0 48px 32px}
@@ -159,6 +166,7 @@ section{padding:120px 48px}
 .exp-item h4{color:var(--text2);font-weight:400;font-size:.95rem;margin-bottom:12px}
 .exp-item p{color:var(--text3);line-height:1.7;font-size:.9rem}
 
+/* CONTACT */
 .contact-section{text-align:center}
 .contact-section .section-header{text-align:center}
 .contact-section .section-label{justify-content:center}
@@ -178,41 +186,68 @@ section{padding:120px 48px}
 .form-submit{width:100%;padding:16px;background:var(--accent);color:#0a0a0a;border:none;border-radius:100px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s ease;font-family:var(--font)}
 .form-submit:hover{box-shadow:0 10px 40px rgba(201,243,29,.25);transform:translateY(-2px)}
 
+/* FOOTER */
 footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--text3)}
 footer a{color:var(--text2);text-decoration:none;transition:color .3s ease}
 footer a:hover{color:var(--accent)}
 .footer-links{display:flex;gap:24px}
 @media(max-width:768px){footer{flex-direction:column;gap:16px;padding:32px 24px;text-align:center}}
 
+/* EDUCATION */
+.edu-card{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:48px;max-width:800px;margin:0 auto;transition:all .4s ease}
+.edu-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.edu-shield{width:120px;height:120px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edu-shield svg{width:100%;height:100%}
+.edu-info h3{font-family:var(--font2);font-size:1.5rem;font-weight:700;margin-bottom:8px}
+.edu-info h4{color:var(--accent);font-family:var(--mono);font-size:.85rem;font-weight:500;margin-bottom:12px}
+.edu-info p{color:var(--text2);line-height:1.7;font-size:.95rem}
+.edu-details{display:flex;gap:24px;margin-top:16px;flex-wrap:wrap}
+.edu-detail{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text2)}
+.edu-detail svg{width:16px;height:16px;stroke:var(--accent)}
+@media(max-width:768px){.edu-card{grid-template-columns:1fr;text-align:center}.edu-shield{margin:0 auto}.edu-details{justify-content:center}}
+
+/* REVEAL ANIMATIONS */
 .reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-delay-1{transition-delay:.1s}
 .reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}
 .reveal-delay-4{transition-delay:.4s}
+
+/* MAGNETIC BUTTON EFFECT */
 .magnetic{transition:transform .3s ease}
 
+/* NOISE OVERLAY */
 .noise{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px}
 
+/* SMOOTH SCROLLBAR */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:var(--text3)}
 
+/* GRADIENT GLOW */
 .glow{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(150px);opacity:.12;pointer-events:none;z-index:0}
 .glow-1{background:var(--accent);top:-200px;right:10%}
 .glow-2{background:#6366f1;bottom:-300px;left:-10%}
+
+/* PAGE PROGRESS */
 .page-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:10001;transition:width .1s linear}
 </style>
 </head>
 <body>
 
+<!-- NOISE OVERLAY -->
 <div class="noise"></div>
+
+<!-- PAGE PROGRESS -->
 <div class="page-progress" id="progress"></div>
+
+<!-- CUSTOM CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- SPLASH -->
+<!-- SPLASH SCREEN -->
 <div class="splash" id="splash">
   <div class="splash-logo">
     <span>J</span><span>u</span><span>l</span><span>i</span><span>a</span><span>n</span><span>&nbsp;</span><span>S</span><span>a</span><span>n</span><span>c</span><span>h</span><span>e</span><span>z</span>
@@ -223,54 +258,51 @@ footer a:hover{color:var(--accent)}
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo magnetic">julian<em>.</em></a>
-  <div class="nav-right">
-    <div class="nav-links" id="navLinks">
-      <a href="#about" class="magnetic" data-en="About" data-es="Sobre mí">About</a>
-      <a href="#skills" class="magnetic" data-en="Skills" data-es="Habilidades">Skills</a>
-      <a href="#work" class="magnetic" data-en="Projects" data-es="Proyectos">Projects</a>
-      <a href="#experience" class="magnetic" data-en="Experience" data-es="Experiencia">Experience</a>
-      <a href="#contact" class="nav-cta magnetic" data-en="Let's Talk" data-es="Hablemos">Let's Talk</a>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="langEN" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" id="langES" onclick="setLang('es')">ES</button>
-    </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" class="magnetic">Sobre mí</a>
+    <a href="#education" class="magnetic">Educación</a>
+    <a href="#skills" class="magnetic">Habilidades</a>
+    <a href="#work" class="magnetic">Trabajo</a>
+    <a href="#experience" class="magnetic">Experiencia</a>
+    <a href="#contact" class="nav-cta magnetic">Hablemos</a>
   </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Menú">&#9776;</button>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="glow glow-1"></div>
   <div class="glow glow-2"></div>
-  <div class="hero-visual"><div class="hero-grid"></div></div>
+  <div class="hero-visual">
+    <div class="hero-grid"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">
       <span class="dot"></span>
-      <span id="typingRole">Flutter & Mobile Developer</span>
+      <span id="typingRole">Disponible para proyectos</span>
     </div>
     <h1>
-      <div class="line"><span data-en="Building digital" data-es="Creando experiencias">Building digital</span></div>
-      <div class="line"><span data-en="experiences that" data-es="digitales que">experiences that</span></div>
-      <div class="line"><span class="accent" data-en="stand out." data-es="destacan.">stand out.</span></div>
+      <div class="line"><span>La IA está transformando</span></div>
+      <div class="line"><span>el mundo — yo</span></div>
+      <div class="line"><span class="accent">construyo lo que viene.</span></div>
     </h1>
-    <p class="hero-desc" data-en="Developer with 5 years of experience building cross-platform mobile apps with Flutter, backend services with Java &amp; Spring Boot, databases with SQL &amp; Firebase, and automation with Python &amp; AI. Delivering solutions across healthcare, real estate, hospitality, and psychology." data-es="Desarrollador con 5 años de experiencia creando apps móviles multiplataforma con Flutter, servicios backend con Java &amp; Spring Boot, bases de datos con SQL &amp; Firebase, y automatización con Python &amp; IA. Entregando soluciones en salud, inmobiliaria, hotelería y psicología.">Developer with 5 years of experience building cross-platform mobile apps with Flutter, backend services with Java &amp; Spring Boot, databases with SQL &amp; Firebase, and automation with Python &amp; AI. Delivering solutions across healthcare, real estate, hospitality, and psychology.</p>
+    <p class="hero-desc">El futuro es de quienes lo construyen. Soy Julian Sanchez — estudiante de Ingeniería Informática de 22 años y Desarrollador Full-Stack con más de 4 años de experiencia, transformando ideas en productos digitales inteligentes. No te quedes atrás.</p>
     <div class="hero-actions">
-      <a href="#work" class="btn-primary magnetic"><span data-en="View Projects" data-es="Ver Proyectos">View Projects</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-      <a href="#contact" class="btn-secondary magnetic" data-en="Contact Me" data-es="Contactame">Contact Me</a>
+      <a href="#work" class="btn-primary magnetic">Ver Proyectos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+      <a href="#contact" class="btn-secondary magnetic">Contactame</a>
     </div>
     <div class="stats">
       <div class="stat-item">
-        <h3><span class="counter" data-target="10">0</span><span class="accent-char">+</span></h3>
-        <p data-en="Projects Delivered" data-es="Proyectos Entregados">Projects Delivered</p>
+        <h3><span class="counter" data-target="7">0</span><span class="accent-char">+</span></h3>
+        <p>Proyectos completados</p>
       </div>
       <div class="stat-item">
-        <h3><span class="counter" data-target="5">0</span><span class="accent-char">+</span></h3>
-        <p data-en="Years Experience" data-es="Años de Experiencia">Years Experience</p>
+        <h3><span class="counter" data-target="4">0</span><span class="accent-char">+</span></h3>
+        <p>Años de experiencia</p>
       </div>
       <div class="stat-item">
-        <h3><span class="counter" data-target="12">0</span><span class="accent-char">+</span></h3>
-        <p data-en="Technologies" data-es="Tecnologías">Technologies</p>
+        <h3><span class="counter" data-target="8">0</span><span class="accent-char">+</span></h3>
+        <p>Tecnologías</p>
       </div>
     </div>
   </div>
@@ -279,17 +311,63 @@ footer a:hover{color:var(--accent)}
 <!-- ABOUT -->
 <section id="about">
   <div class="section-header reveal">
-    <div class="section-label" data-en="About me" data-es="Sobre mí">About me</div>
-    <h2 class="section-title" data-en="Passionate about building<br>things that matter." data-es="Apasionado por construir<br>cosas que importan.">Passionate about building<br>things that matter.</h2>
+    <div class="section-label">Sobre mí</div>
+    <h2 class="section-title">El mundo cambia rápido.<br>Yo construyo las herramientas para él.</h2>
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p data-en="I'm <strong>Julian Sanchez</strong>, a 22-year-old developer based in Buenos Aires, Argentina. With nearly 5 years of experience, I specialize in <strong>cross-platform mobile development</strong> with Flutter, backend services with <strong>Java &amp; Spring Boot</strong>, database design with <strong>SQL &amp; Firebase</strong>, and process automation with <strong>Python &amp; AI</strong>." data-es="Soy <strong>Julian Sanchez</strong>, un desarrollador de 22 años de Buenos Aires, Argentina. Con casi 5 años de experiencia, me especializo en <strong>desarrollo móvil multiplataforma</strong> con Flutter, servicios backend con <strong>Java &amp; Spring Boot</strong>, diseño de bases de datos con <strong>SQL &amp; Firebase</strong>, y automatización de procesos con <strong>Python &amp; IA</strong>.">I'm <strong>Julian Sanchez</strong>, a 22-year-old developer based in Buenos Aires, Argentina. With nearly 5 years of experience, I specialize in <strong>cross-platform mobile development</strong> with Flutter, backend services with <strong>Java &amp; Spring Boot</strong>, database design with <strong>SQL &amp; Firebase</strong>, and process automation with <strong>Python &amp; AI</strong>.</p>
-      <p data-en="I've delivered projects for <strong>Accell One</strong> (HIPAA-compliant healthcare), <strong>BAYADA Home Health Care</strong>, <strong>Wyndham Hotels</strong> (voucher systems), <strong>ConsultaRHYS</strong> (psychological surveillance), <strong>Handshake</strong> (real estate), and <strong>ARTAI</strong> (document automation with AI). Currently in my final year of <strong>IT Engineering at Universidad del Salvador</strong>." data-es="Entregué proyectos para <strong>Accell One</strong> (salud HIPAA-compliant), <strong>BAYADA Home Health Care</strong>, <strong>Wyndham Hotels</strong> (sistema de vouchers), <strong>ConsultaRHYS</strong> (vigilancia psicológica), <strong>Handshake</strong> (inmobiliaria), y <strong>ARTAI</strong> (automatización documental con IA). Actualmente en mi último año de <strong>Ingeniería Informática en la USAL</strong>.">I've delivered projects for <strong>Accell One</strong> (HIPAA-compliant healthcare), <strong>BAYADA Home Health Care</strong>, <strong>Wyndham Hotels</strong> (voucher systems), <strong>ConsultaRHYS</strong> (psychological surveillance), <strong>Handshake</strong> (real estate), and <strong>ARTAI</strong> (document automation with AI). Currently in my final year of <strong>IT Engineering at Universidad del Salvador</strong>.</p>
-      <p data-en="I'm passionate about <strong>clean code</strong>, performance optimization, and building apps that make a real impact in people's lives." data-es="Me apasiona el <strong>código limpio</strong>, la optimización de rendimiento y crear apps que generen un impacto real en la vida de las personas.">I'm passionate about <strong>clean code</strong>, performance optimization, and building apps that make a real impact in people's lives.</p>
+      <p>Soy <strong>Julian Sanchez</strong>, 22 años — desarrollador full-stack y diseñador de Argentina con <strong>más de 4 años de experiencia profesional</strong>. Creo que <strong>la IA es la revolución más grande de nuestra generación</strong>. Mientras otros miran, yo construyo. Apps web, apps móviles, plataformas inteligentes — si empuja los límites, estoy adentro.</p>
+      <p>Actualmente cursando el <strong>5to año de Ingeniería Informática en la Universidad del Salvador (USAL)</strong>, combino profundidad académica con experiencia real en la industria. Mi stack abarca <strong>Flutter, Java, TypeScript, Python e integraciones de IA</strong>.</p>
+      <p>No solo escribo código — creo productos que resuelven problemas reales, son intuitivos y están hechos para escalar. Desde plataformas de salud hasta sistemas de automatización, cada proyecto es la oportunidad de crear algo que <strong>no existía antes</strong>. Si tu negocio necesita un desarrollador que entienda tanto <strong>tecnología de punta como buen diseño</strong>, estás en el lugar correcto.</p>
     </div>
     <div class="about-image reveal reveal-delay-2">
-      <img src="photo.jpg" alt="Julian Sanchez" loading="lazy">
+      <!-- REEMPLAZÁ esto con tu foto real: <img src="tu-foto.jpg" style="width:100%;height:100%;object-fit:cover"> -->
+      <div class="about-image-placeholder" style="background:linear-gradient(135deg,#111,#1a1a2e);position:relative">
+        <div style="text-align:center;z-index:1">
+          <div style="width:80px;height:80px;border-radius:50%;background:rgba(201,243,29,.1);border:2px solid var(--accent);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-family:var(--font2);color:var(--accent);font-weight:700">JS</div>
+          <div style="font-family:var(--font2);font-weight:600;color:var(--text);font-size:1rem;margin-bottom:4px">Julian Sanchez</div>
+          <div style="font-size:.75rem;color:var(--accent);font-family:var(--mono)">Desarrollador Full-Stack</div>
+          <div style="font-size:.65rem;color:var(--text3);font-family:var(--mono);margin-top:4px">5to Año Ing. Informática — USAL</div>
+          <div style="font-size:.65rem;color:var(--text3);margin-top:2px">22 años · 4+ años de experiencia</div>
+          <div style="margin-top:16px;display:flex;gap:8px;justify-content:center">
+            <span style="padding:4px 10px;background:rgba(255,255,255,.05);border-radius:100px;font-size:.65rem;color:var(--text3)">Flutter</span>
+            <span style="padding:4px 10px;background:rgba(255,255,255,.05);border-radius:100px;font-size:.65rem;color:var(--text3)">Python</span>
+            <span style="padding:4px 10px;background:rgba(255,255,255,.05);border-radius:100px;font-size:.65rem;color:var(--text3)">Java</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <div class="section-label">Educación</div>
+    <h2 class="section-title">Formación Académica</h2>
+  </div>
+  <div class="edu-card reveal">
+    <div class="edu-shield" style="width:140px;height:auto">
+      <img id="usalLogo" src="usal-logo.png" alt="Escudo USAL - Universidad del Salvador" style="width:100%;height:auto;object-fit:contain;border-radius:8px">
+    </div>
+    <div class="edu-info">
+      <h3>Ingeniería Informática</h3>
+      <h4>5to Año — En curso</h4>
+      <p>Universidad del Salvador (USAL), Buenos Aires, Argentina. Cursando Ingeniería Informática con enfoque en desarrollo de software, arquitectura de sistemas e inteligencia artificial.</p>
+      <div class="edu-details">
+        <div class="edu-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
+          Ingeniería Informática
+        </div>
+        <div class="edu-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          5to Año (2026)
+        </div>
+        <div class="edu-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Buenos Aires, Argentina
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -297,45 +375,57 @@ footer a:hover{color:var(--accent)}
 <!-- SKILLS -->
 <section id="skills" style="background:var(--bg2)">
   <div class="section-header reveal">
-    <div class="section-label" data-en="What I do" data-es="Lo que hago">What I do</div>
-    <h2 class="section-title" data-en="Skills &amp; Technologies" data-es="Habilidades &amp; Tecnologías">Skills &amp; Technologies</h2>
+    <div class="section-label">Lo que hago</div>
+    <h2 class="section-title">Habilidades y Tecnologías</h2>
   </div>
   <div class="skills-grid">
     <div class="skill-card reveal">
       <div class="skill-icon">&#128241;</div>
-      <h3 data-en="Mobile Development" data-es="Desarrollo Móvil">Mobile Development</h3>
-      <p data-en="High-performance cross-platform mobile apps with Flutter &amp; Dart, from concept to App Store / Play Store deployment." data-es="Apps móviles multiplataforma de alto rendimiento con Flutter &amp; Dart, desde concepto hasta despliegue en App Store / Play Store.">High-performance cross-platform mobile apps with Flutter &amp; Dart, from concept to App Store / Play Store deployment.</p>
-      <div class="skill-tags"><span>Flutter</span><span>Dart</span><span>BLoC</span><span>Riverpod</span><span>Material 3</span></div>
+      <h3>Desarrollo Móvil</h3>
+      <p>Creando apps móviles multiplataforma con UI de alta calidad y rendimiento nativo para iOS y Android.</p>
+      <div class="skill-tags">
+        <span>Flutter</span><span>Dart</span><span>Firebase</span>
+      </div>
     </div>
     <div class="skill-card reveal reveal-delay-1">
-      <div class="skill-icon">&#128450;</div>
-      <h3 data-en="Databases" data-es="Bases de Datos">Databases</h3>
-      <p data-en="Design, optimization, and management of relational and NoSQL databases for scalable architectures." data-es="Diseño, optimización y gestión de bases de datos relacionales y NoSQL para arquitecturas escalables.">Design, optimization, and management of relational and NoSQL databases for scalable architectures.</p>
-      <div class="skill-tags"><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>SQLite</span></div>
+      <div class="skill-icon">&#9881;</div>
+      <h3>Backend y Java</h3>
+      <p>Diseñando sistemas backend robustos y aplicaciones empresariales con arquitectura sólida y código limpio.</p>
+      <div class="skill-tags">
+        <span>Java</span><span>SQL</span><span>Firebase</span>
+      </div>
     </div>
     <div class="skill-card reveal reveal-delay-2">
-      <div class="skill-icon">&#128293;</div>
-      <h3>Firebase &amp; Backend</h3>
-      <p data-en="Full Firebase suite: Auth, Firestore, Cloud Functions, FCM, Realtime DB. REST APIs, WebSocket, and Spring Boot services." data-es="Suite completa de Firebase: Auth, Firestore, Cloud Functions, FCM, Realtime DB. APIs REST, WebSocket y servicios Spring Boot.">Full Firebase suite: Auth, Firestore, Cloud Functions, FCM, Realtime DB. REST APIs, WebSocket, and Spring Boot services.</p>
-      <div class="skill-tags"><span>Firebase</span><span>Spring Boot</span><span>REST</span><span>WebSocket</span><span>gRPC</span></div>
+      <div class="skill-icon">&#9741;</div>
+      <h3>Desarrollo Web</h3>
+      <p>Creando aplicaciones web modernas y responsive con TypeScript y tecnologías frontend actuales.</p>
+      <div class="skill-tags">
+        <span>TypeScript</span><span>HTML/CSS</span><span>JavaScript</span>
+      </div>
     </div>
     <div class="skill-card reveal reveal-delay-3">
-      <div class="skill-icon">&#129302;</div>
-      <h3 data-en="Automation &amp; AI" data-es="Automatización &amp; IA">Automation &amp; AI</h3>
-      <p data-en="Process automation with Python, AI-assisted development, document processing, and intelligent workflow optimization." data-es="Automatización de procesos con Python, desarrollo asistido por IA, procesamiento de documentos y optimización inteligente de flujos de trabajo.">Process automation with Python, AI-assisted development, document processing, and intelligent workflow optimization.</p>
-      <div class="skill-tags"><span>Python</span><span>OpenAI API</span><span>TensorFlow Lite</span><span>Claude</span></div>
+      <div class="skill-icon">&#10024;</div>
+      <h3>IA e Integraciones</h3>
+      <p>Construyendo soluciones inteligentes con modelos de IA, flujos de automatización e integraciones que agregan valor real.</p>
+      <div class="skill-tags">
+        <span>Python</span><span>AI APIs</span><span>n8n</span><span>Automatización</span>
+      </div>
     </div>
     <div class="skill-card reveal reveal-delay-1">
-      <div class="skill-icon">&#9741;</div>
-      <h3 data-en="Languages &amp; Architecture" data-es="Lenguajes &amp; Arquitectura">Languages &amp; Architecture</h3>
-      <p data-en="Dart, Java, SQL, Python. Clean Architecture, MVVM, Repository Pattern, dependency injection, and SOLID principles." data-es="Dart, Java, SQL, Python. Clean Architecture, MVVM, Repository Pattern, inyección de dependencias y principios SOLID.">Dart, Java, SQL, Python. Clean Architecture, MVVM, Repository Pattern, dependency injection, and SOLID principles.</p>
-      <div class="skill-tags"><span>Java</span><span>Dart</span><span>Python</span><span>Clean Arch</span><span>SOLID</span></div>
+      <div class="skill-icon">&#9729;</div>
+      <h3>Bases de Datos y Cloud</h3>
+      <p>Gestionando datos con bases SQL y NoSQL, desplegando en plataformas cloud con capacidades en tiempo real.</p>
+      <div class="skill-tags">
+        <span>SQL</span><span>Firebase</span><span>Cloud Functions</span>
+      </div>
     </div>
     <div class="skill-card reveal reveal-delay-2">
-      <div class="skill-icon">&#128640;</div>
-      <h3>DevOps &amp; CI/CD</h3>
-      <p data-en="Automated deployment pipelines, testing strategies, and cloud infrastructure for continuous delivery." data-es="Pipelines de despliegue automatizados, estrategias de testing e infraestructura cloud para entrega continua.">Automated deployment pipelines, testing strategies, and cloud infrastructure for continuous delivery.</p>
-      <div class="skill-tags"><span>GitHub Actions</span><span>Codemagic</span><span>Fastlane</span><span>Docker</span></div>
+      <div class="skill-icon">&#9783;</div>
+      <h3>Automatización y Workflows</h3>
+      <p>Automatizando procesos de negocio con n8n, conectando APIs y construyendo flujos inteligentes de punta a punta.</p>
+      <div class="skill-tags">
+        <span>n8n</span><span>API Integrations</span><span>Python</span>
+      </div>
     </div>
   </div>
 </section>
@@ -343,128 +433,96 @@ footer a:hover{color:var(--accent)}
 <!-- PROJECTS -->
 <section id="work">
   <div class="section-header reveal">
-    <div class="section-label" data-en="Selected work" data-es="Trabajos destacados">Selected work</div>
-    <h2 class="section-title" data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</h2>
+    <div class="section-label">Trabajo seleccionado</div>
+    <h2 class="section-title">Proyectos Destacados</h2>
   </div>
-  <div class="projects-list">
+  <div class="projects-grid">
 
-    <!-- BAYADA -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(13,59,46,.92),rgba(26,107,79,.88)),url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">BAYADA</div>
-          <div class="project-logo-sub">Home Health Care</div>
-        </div>
+    <!-- 1. AccelOne -->
+    <div class="pcard reveal">
+      <div class="pcard-top">
+        <div class="pcard-company">AccelOne</div>
+        <span class="pcard-badge empleo">Empleo</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2022 — 2023</div>
-        <h3>BAYADA Home Health Care</h3>
-        <div class="project-client" data-en="Multi-project Company" data-es="Empresa Multiproyecto">Multi-project Company</div>
-        <p data-en="Healthcare management platform for home health services. Scheduling, patient tracking, caregiver coordination, and real-time communication for one of the largest home care providers in the US." data-es="Plataforma de gestión de salud domiciliaria. Agendamiento, seguimiento de pacientes, coordinación de cuidadores y comunicación en tiempo real para uno de los mayores proveedores de salud domiciliaria de EE.UU.">Healthcare management platform for home health services. Scheduling, patient tracking, caregiver coordination, and real-time communication for one of the largest home care providers in the US.</p>
-        <div class="project-tech"><span>Flutter</span><span>BLoC</span><span>Firebase</span><span>REST API</span><span>SQL</span></div>
-      </div>
+      <div class="pcard-project">Bayada Home Health Care</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Flutter Developer</div>
+      <p class="pcard-desc">Desarrollo móvil en AccelOne para Bayada Home Health Care — uno de los mayores proveedores de atención médica domiciliaria de EE.UU. Construcción de funcionalidades móviles para operaciones de salud y flujos de trabajo digitales.</p>
+      <div class="pcard-tech"><span>Flutter</span><span>Dart</span><span>SQL</span><span>Firebase</span></div>
+      <a href="https://accelone.com" target="_blank" class="pcard-link">accelone.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
     </div>
 
-    <!-- HANDSHAKE -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(26,26,62,.9),rgba(45,43,105,.85)),url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">Handshake</div>
-          <div class="project-logo-sub">Real Estate Platform</div>
-        </div>
+    <!-- 2. Artai -->
+    <div class="pcard reveal reveal-delay-1">
+      <div class="pcard-top">
+        <div class="pcard-company">Grupo Artai</div>
+        <span class="pcard-badge freelance">Freelance</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2024</div>
-        <h3>Handshake</h3>
-        <div class="project-client" data-en="Multi-project Company" data-es="Empresa Multiproyecto">Multi-project Company</div>
-        <p data-en="Real estate platform connecting buyers with agencies. Smart matching, property browsing, integrated chat, and streamlined communication to simplify the home buying process." data-es="Plataforma inmobiliaria que conecta compradores con inmobiliarias. Matcheo inteligente, búsqueda de propiedades, chat integrado y comunicación simplificada para facilitar la compra de inmuebles.">Real estate platform connecting buyers with agencies. Smart matching, property browsing, integrated chat, and streamlined communication to simplify the home buying process.</p>
-        <div class="project-tech"><span>Flutter</span><span>Firebase</span><span>MongoDB</span><span>WebSocket</span></div>
-      </div>
+      <div class="pcard-project">Automatización Documental con IA</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Full-Stack Developer</div>
+      <p class="pcard-desc">Sistema automatizado de lectura y procesamiento de PDFs para Grupo Artai. Extracción de datos de documentos de clientes, optimizando el control de seguros corporativos y los flujos de compliance.</p>
+      <div class="pcard-tech"><span>Python</span><span>n8n</span><span>SQL</span><span>AI Integrations</span></div>
+      <a href="https://artai.com.ar" target="_blank" class="pcard-link">artai.com.ar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
     </div>
 
-    <!-- CONSULTARHYS -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(46,26,61,.9),rgba(90,45,130,.85)),url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">ConsultaRHYS</div>
-          <div class="project-logo-sub" data-en="Psychological Surveillance" data-es="Vigilancia Psicológica">Psychological Surveillance</div>
-        </div>
+    <!-- 3. ConsultarHYS -->
+    <div class="pcard reveal reveal-delay-2">
+      <div class="pcard-top">
+        <div class="pcard-company">ConsultarHYS</div>
+        <span class="pcard-badge freelance">Freelance</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2025</div>
-        <h3>ConsultaRHYS</h3>
-        <div class="project-client" data-en="Psychological Surveillance" data-es="Vigilancia Psicológica">Psychological Surveillance</div>
-        <p data-en="Psychological surveillance and wellness platform for companies. Employee mental health tracking, anonymous surveys, risk detection, and reporting dashboards for HR teams." data-es="Plataforma de vigilancia psicológica y bienestar para empresas. Seguimiento de salud mental de empleados, encuestas anónimas, detección de riesgo y dashboards de reportes para equipos de RRHH.">Psychological surveillance and wellness platform for companies. Employee mental health tracking, anonymous surveys, risk detection, and reporting dashboards for HR teams.</p>
-        <div class="project-tech"><span>Flutter</span><span>BLoC</span><span>Firebase</span><span>SQL</span><span>REST API</span></div>
-      </div>
+      <div class="pcard-project">App de Riesgo Psicosocial y Evaluación</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Full-Stack Developer</div>
+      <p class="pcard-desc">App móvil para evaluación psicológica empresarial. Tests estandarizados (MBI), botón de pánico, dashboards anonimizados y arquitectura multi-tenant con seguridad a nivel de fila.</p>
+      <div class="pcard-tech"><span>Flutter</span><span>Dart</span><span>Firebase</span><span>SQL</span></div>
     </div>
 
-    <!-- ACCELL ONE -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(26,42,62,.9),rgba(22,67,110,.85)),url('https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">Accell One</div>
-          <div class="project-logo-sub">HIPAA Healthcare</div>
-        </div>
+    <!-- 4. CRONOS -->
+    <div class="pcard reveal">
+      <div class="pcard-top">
+        <div class="pcard-company">CRONOS Racing</div>
+        <span class="pcard-badge freelance">Freelance</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2023 — 2024</div>
-        <h3 data-en="Healthcare App — Accell One" data-es="App de Salud — Accell One">Healthcare App — Accell One</h3>
-        <div class="project-client">Accell One</div>
-        <p data-en="HIPAA-compliant patient management system with end-to-end encryption, role-based access control, real-time vital signs monitoring via WebRTC, and offline-first architecture with SQLite." data-es="Sistema de gestión de pacientes HIPAA-compliant con encriptación end-to-end, control de acceso por roles, monitoreo de signos vitales en tiempo real vía WebRTC y arquitectura offline-first con SQLite.">HIPAA-compliant patient management system with end-to-end encryption, role-based access control, real-time vital signs monitoring via WebRTC, and offline-first architecture with SQLite.</p>
-        <div class="project-tech"><span>Flutter</span><span>WebRTC</span><span>SQLite</span><span>Firebase Auth</span><span>HealthKit</span></div>
-      </div>
+      <div class="pcard-project">Sistema de Gestión de Escudería de Karting</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Java Developer</div>
+      <p class="pcard-desc">Plataforma de gestión para escudería de karting. Inventario bimoneda (USD/ARS), tracking de eventos y sesiones, monitoreo de desgaste de componentes, reportes financieros y registro de configuraciones técnicas.</p>
+      <div class="pcard-tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span></div>
     </div>
 
-    <!-- WYNDHAM -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(61,46,13,.88),rgba(107,90,26,.82)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">Wyndham</div>
-          <div class="project-logo-sub">Hotels &amp; Resorts</div>
-        </div>
+    <!-- 5. DrayPal -->
+    <div class="pcard reveal reveal-delay-1">
+      <div class="pcard-top">
+        <div class="pcard-company">DrayPal</div>
+        <span class="pcard-badge empleo">Empleo</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2023</div>
-        <h3 data-en="Voucher System — Wyndham" data-es="Sistema de Vouchers — Wyndham">Voucher System — Wyndham</h3>
-        <div class="project-client">Wyndham Hotels &amp; Resorts</div>
-        <p data-en="Voucher generation system for Wyndham's marketing team. Creates vouchers in multiple customizable formats with PDF export, enabling the team to produce and distribute professional promotional materials efficiently." data-es="Sistema de generación de vouchers para el equipo de marketing de Wyndham. Crea vouchers en múltiples formatos personalizables con exportación a PDF, permitiendo al equipo producir y distribuir material promocional profesional de forma eficiente.">Voucher generation system for Wyndham's marketing team. Creates vouchers in multiple customizable formats with PDF export, enabling the team to produce and distribute professional promotional materials efficiently.</p>
-        <div class="project-tech"><span>Flutter</span><span>Firebase</span><span>SQL</span><span>PDF</span><span>REST API</span></div>
-      </div>
+      <div class="pcard-project">Plataforma de Logística y Entregas 2.0</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Flutter Developer</div>
+      <p class="pcard-desc">App móvil de gestión logística y entregas. Optimización de rutas, seguimiento de entregas y gestión de flota — app Flutter multiplataforma con queries SQL optimizadas para rendimiento a escala.</p>
+      <div class="pcard-tech"><span>Flutter</span><span>Dart</span><span>SQL</span><span>Firebase</span></div>
     </div>
 
-    <!-- ARTAI -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(13,42,61,.9),rgba(26,79,110,.85)),url('https://images.unsplash.com/photo-1450101499163-c8848e968f90?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text">ARTAI</div>
-          <div class="project-logo-sub" data-en="Auditor Automation" data-es="Automatización de Auditores">Auditor Automation</div>
-        </div>
+    <!-- 6. Gym App -->
+    <div class="pcard reveal reveal-delay-2">
+      <div class="pcard-top">
+        <div class="pcard-company">Gym App</div>
+        <span class="pcard-badge empleo">Empleo</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2024</div>
-        <h3 data-en="ARTAI — Auditor Automation" data-es="ARTAI — Automatización de Auditores">ARTAI — Auditor Automation</h3>
-        <div class="project-client" data-en="Contractor Document Control" data-es="Control Documental de Contratistas">Contractor Document Control</div>
-        <p data-en="Automation platform for auditors managing contractor document control. AI-powered document validation, automated compliance workflows, and intelligent auditing tools built with Python and AI to streamline the entire document review process." data-es="Plataforma de automatización para auditores en control documental de contratistas. Validación de documentos con IA, flujos de cumplimiento automatizados y herramientas de auditoría inteligentes construidas con Python e IA para optimizar todo el proceso de revisión documental.">Automation platform for auditors managing contractor document control. AI-powered document validation, automated compliance workflows, and intelligent auditing tools built with Python and AI to streamline the entire document review process.</p>
-        <div class="project-tech"><span>Python</span><span>AI/ML</span><span>Spring Boot</span><span>PostgreSQL</span><span>Firebase</span><span>Flutter</span></div>
-      </div>
+      <div class="pcard-project">Rastreador de Fitness y Entrenamientos</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Flutter Developer</div>
+      <p class="pcard-desc">App móvil de fitness para gestión de entrenamientos, registro de ejercicios y seguimiento de progreso. Flutter multiplataforma con SQLite para almacenamiento local eficiente.</p>
+      <div class="pcard-tech"><span>Flutter</span><span>Dart</span><span>SQLite</span><span>Firebase</span></div>
     </div>
 
-    <!-- GYM -->
-    <div class="project-card reveal">
-      <div class="project-image" style="background:linear-gradient(135deg,rgba(46,13,13,.88),rgba(107,26,26,.82)),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=500&fit=crop&auto=format') center/cover no-repeat">
-        <div class="project-overlay">
-          <div class="project-logo-text" data-en="Gym App" data-es="App Gimnasio">Gym App</div>
-          <div class="project-logo-sub" data-en="Fitness Tracking" data-es="Seguimiento Fitness">Fitness Tracking</div>
-        </div>
+    <!-- 7. SoundExchange (último) -->
+    <div class="pcard reveal">
+      <div class="pcard-top">
+        <div class="pcard-company">SoundExchange</div>
+        <span class="pcard-badge empleo">Empleo</span>
       </div>
-      <div class="project-info">
-        <div class="project-year">2021 — 2022</div>
-        <h3 data-en="Local Gym App" data-es="App de Gimnasio Local">Local Gym App</h3>
-        <div class="project-client" data-en="Local Business" data-es="Negocio Local">Local Business</div>
-        <p data-en="Complete fitness tracking application for a local gym. Workout tracking, progress analytics with interactive charts, exercise catalogs, and member management with full Firebase backend." data-es="Aplicación completa de seguimiento fitness para un gimnasio local. Tracking de entrenamientos, analíticas de progreso con gráficos interactivos, catálogo de ejercicios y gestión de miembros con backend completo en Firebase.">Complete fitness tracking application for a local gym. Workout tracking, progress analytics with interactive charts, exercise catalogs, and member management with full Firebase backend.</p>
-        <div class="project-tech"><span>Flutter</span><span>Firebase</span><span>SQLite</span><span>BLE</span><span>FL Chart</span></div>
-      </div>
+      <div class="pcard-project">App Móvil de Derechos Musicales</div>
+      <div class="pcard-role"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Flutter Developer</div>
+      <p class="pcard-desc">App móvil para la industria de distribución de derechos musicales. Seguimiento de ganancias de artistas, búsqueda de catálogo, descarga de estados de cuenta, autenticación MFA, integración de pagos y analytics — Clean Architecture en 11 épicas.</p>
+      <div class="pcard-tech"><span>Flutter</span><span>Dart</span><span>PostgreSQL</span><span>Firebase</span><span>Hive</span></div>
+      <a href="https://www.soundexchange.com" target="_blank" class="pcard-link">soundexchange.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
     </div>
 
   </div>
@@ -473,52 +531,51 @@ footer a:hover{color:var(--accent)}
 <!-- EXPERIENCE -->
 <section id="experience" style="background:var(--bg2)">
   <div class="section-header reveal">
-    <div class="section-label" data-en="Experience" data-es="Experiencia">Experience</div>
-    <h2 class="section-title" data-en="Where I've Worked" data-es="Dónde Trabajé">Where I've Worked</h2>
+    <div class="section-label">Experiencia</div>
+    <h2 class="section-title">Dónde trabajé</h2>
   </div>
   <div class="exp-timeline">
     <div class="exp-item reveal">
-      <div class="exp-date" data-en="2022 — Present" data-es="2022 — Presente">2022 — Present</div>
-      <h3>Flutter &amp; Mobile Developer</h3>
-      <h4 data-en="Multi-project Company — BAYADA, Handshake, Wyndham, ConsultaRHYS" data-es="Empresa Multiproyecto — BAYADA, Handshake, Wyndham, ConsultaRHYS">Multi-project Company — BAYADA, Handshake, Wyndham, ConsultaRHYS</h4>
-      <p data-en="Leading mobile development across multiple projects. Started with BAYADA Home Health Care (healthcare), then Wyndham voucher system, Handshake (real estate), and ConsultaRHYS (psychological surveillance). Clean Architecture, BLoC, Firebase, SQL." data-es="Liderando desarrollo móvil en múltiples proyectos. Empecé con BAYADA Home Health Care (salud), luego sistema de vouchers de Wyndham, Handshake (inmobiliaria) y ConsultaRHYS (vigilancia psicológica). Clean Architecture, BLoC, Firebase, SQL.">Leading mobile development across multiple projects. Started with BAYADA Home Health Care (healthcare), then Wyndham voucher system, Handshake (real estate), and ConsultaRHYS (psychological surveillance). Clean Architecture, BLoC, Firebase, SQL.</p>
+      <div class="exp-date">Empleo</div>
+      <h3>Flutter Developer — AccelOne</h3>
+      <h4>Proyecto Bayada Home Health Care</h4>
+      <p>Trabajo en AccelOne, empresa multinacional de software (EE.UU. y Buenos Aires), en el proyecto Bayada Home Health Care — uno de los mayores proveedores de salud domiciliaria de EE.UU. Funcionalidades móviles con Flutter, Dart y SQL.</p>
     </div>
     <div class="exp-item reveal reveal-delay-1">
-      <div class="exp-date">2023 — 2024</div>
-      <h3>Flutter Developer</h3>
-      <h4 data-en="Accell One — Healthcare" data-es="Accell One — Salud">Accell One — Healthcare</h4>
-      <p data-en="Built HIPAA-compliant patient management system with end-to-end encryption, WebRTC for real-time vital signs monitoring, and offline-first architecture with SQLite. 90%+ test coverage." data-es="Desarrollé un sistema de gestión de pacientes HIPAA-compliant con encriptación end-to-end, WebRTC para monitoreo de signos vitales en tiempo real y arquitectura offline-first con SQLite. 90%+ de cobertura de tests.">Built HIPAA-compliant patient management system with end-to-end encryption, WebRTC for real-time vital signs monitoring, and offline-first architecture with SQLite. 90%+ test coverage.</p>
+      <div class="exp-date">Freelance</div>
+      <h3>Full-Stack Developer — Grupo Artai</h3>
+      <h4>Automatización de PDFs y Control Documental</h4>
+      <p>Sistema automatizado de lectura y procesamiento de PDFs para el control documental de Grupo Artai. Extrae y organiza datos de documentos de clientes, optimizando compliance de seguros corporativos. Python, n8n, integraciones de IA y SQL.</p>
     </div>
     <div class="exp-item reveal reveal-delay-2">
-      <div class="exp-date">2023</div>
-      <h3 data-en="Flutter Developer — Wyndham Vouchers" data-es="Flutter Developer — Vouchers Wyndham">Flutter Developer — Wyndham Vouchers</h3>
-      <h4>Wyndham Hotels &amp; Resorts</h4>
-      <p data-en="Developed a voucher generation system for Wyndham's marketing team. Multiple customizable formats with PDF export for professional promotional material production and distribution." data-es="Desarrollé un sistema de generación de vouchers para el equipo de marketing de Wyndham. Múltiples formatos personalizables con exportación a PDF para la producción y distribución de material promocional profesional.">Developed a voucher generation system for Wyndham's marketing team. Multiple customizable formats with PDF export for professional promotional material production and distribution.</p>
-    </div>
-    <div class="exp-item reveal reveal-delay-3">
-      <div class="exp-date">2024</div>
-      <h3 data-en="Python &amp; AI Developer — ARTAI" data-es="Desarrollador Python &amp; IA — ARTAI">Python &amp; AI Developer — ARTAI</h3>
-      <h4 data-en="Document Automation Platform" data-es="Plataforma de Automatización Documental">Document Automation Platform</h4>
-      <p data-en="Designed and built ARTAI, an automation platform for auditors managing contractor document control. AI-powered document validation with Python, automated compliance workflows, and intelligent auditing tools with Spring Boot &amp; PostgreSQL." data-es="Diseñé y construí ARTAI, una plataforma de automatización para auditores de control documental de contratistas. Validación de documentos con IA usando Python, flujos de cumplimiento automatizados y herramientas de auditoría inteligentes con Spring Boot &amp; PostgreSQL.">Designed and built ARTAI, an automation platform for auditors managing contractor document control. AI-powered document validation with Python, automated compliance workflows, and intelligent auditing tools with Spring Boot &amp; PostgreSQL.</p>
+      <div class="exp-date">Freelance</div>
+      <h3>Full-Stack Developer — ConsultarHYS</h3>
+      <h4>Plataforma de Riesgo Psicosocial y Evaluación</h4>
+      <p>Sistema de monitoreo de riesgo psicosocial empresarial con tests de burnout (basados en MBI), botón de pánico para incidentes críticos, dashboards departamentales anonimizados y arquitectura multi-tenant con seguridad a nivel de fila. Flutter, Java, SQL.</p>
     </div>
     <div class="exp-item reveal">
-      <div class="exp-date">2021 — 2022</div>
-      <h3 data-en="Flutter Developer — Early Projects" data-es="Flutter Developer — Primeros Proyectos">Flutter Developer — Early Projects</h3>
-      <h4 data-en="Freelance / Local Business" data-es="Freelance / Negocio Local">Freelance / Local Business</h4>
-      <p data-en="Built a fitness tracking app for a local gym with Firebase backend, Bluetooth LE for IoT equipment connectivity, and data visualization dashboards. Started my journey in Flutter development." data-es="Desarrollé una app de seguimiento fitness para un gimnasio local con backend en Firebase, Bluetooth LE para conectividad con equipos IoT y dashboards de visualización de datos. Comencé mi camino en desarrollo Flutter.">Built a fitness tracking app for a local gym with Firebase backend, Bluetooth LE for IoT equipment connectivity, and data visualization dashboards. Started my journey in Flutter development.</p>
+      <div class="exp-date">Freelance</div>
+      <h3>Java Developer — CRONOS Racing</h3>
+      <h4>Sistema de Gestión de Escudería de Karting</h4>
+      <p>Plataforma de gestión para escudería de karting. Inventario bimoneda (USD/ARS), tracking de eventos, monitoreo de desgaste de componentes, reportes financieros y registro de configuraciones técnicas. Java, Spring Boot, PostgreSQL.</p>
     </div>
-  </div>
-  <div style="margin-top:80px">
-    <div class="section-header reveal">
-      <div class="section-label" data-en="Education" data-es="Educación">Education</div>
+    <div class="exp-item reveal reveal-delay-1">
+      <div class="exp-date">Empleo</div>
+      <h3>Flutter Developer — DrayPal 2.0</h3>
+      <h4>Plataforma de Logística y Entregas</h4>
+      <p>App móvil multiplataforma para gestión logística y entregas. Optimización de rutas, seguimiento de entregas y gestión de flota con Flutter, Dart y queries SQL optimizadas.</p>
     </div>
-    <div class="exp-timeline">
-      <div class="exp-item reveal">
-        <div class="exp-date">2021 — 2026</div>
-        <h3 data-en="IT Engineering (Final Year)" data-es="Ingeniería Informática (Último Año)">IT Engineering (Final Year)</h3>
-        <h4>Universidad del Salvador — Buenos Aires</h4>
-        <p data-en="Currently in the final year of my IT Engineering degree. Focused on software architecture, database systems, and mobile development." data-es="Actualmente cursando el último año de la carrera de Ingeniería Informática. Enfocado en arquitectura de software, sistemas de bases de datos y desarrollo móvil.">Currently in the final year of my IT Engineering degree. Focused on software architecture, database systems, and mobile development.</p>
-      </div>
+    <div class="exp-item reveal reveal-delay-2">
+      <div class="exp-date">Empleo</div>
+      <h3>Flutter Developer — Gym App</h3>
+      <h4>App Móvil de Gestión de Gimnasio</h4>
+      <p>App móvil para gestión integral de gimnasios. Control de membresías, rutinas personalizadas, seguimiento de progreso y notificaciones. Flutter, Dart y Firebase.</p>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-date">Empleo</div>
+      <h3>Flutter Developer — SoundExchange</h3>
+      <h4>App Móvil de Derechos Musicales</h4>
+      <p>App móvil para la industria de distribución de derechos musicales con seguimiento de ganancias, gestión de catálogo, autenticación MFA, descarga de estados de cuenta y analytics. Clean Architecture en 11 épicas con Flutter, Dart, PostgreSQL y Firebase.</p>
     </div>
   </div>
 </section>
@@ -526,77 +583,50 @@ footer a:hover{color:var(--accent)}
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="section-header reveal">
-    <div class="section-label" data-en="Get in touch" data-es="Contacto">Get in touch</div>
+    <div class="section-label">Contacto</div>
   </div>
   <div class="reveal">
-    <h2 class="contact-big-text"><span data-en="Let's work" data-es="Trabajemos">Let's work</span><br><span class="accent" data-en="together." data-es="juntos.">together.</span></h2>
-    <p class="contact-desc" data-en="Have a project in mind or need a developer? I'm always open to discussing new opportunities." data-es="¿Tenés un proyecto en mente o necesitás un desarrollador? Siempre estoy abierto a nuevas oportunidades.">Have a project in mind or need a developer? I'm always open to discussing new opportunities.</p>
+    <h2 class="contact-big-text">¿Listo para construir<br><span class="accent">el futuro?</span></h2>
+    <p class="contact-desc">Ya sea que necesites una plataforma con IA, una app móvil o un producto digital completo — hagámoslo realidad. El mejor momento para empezar es ahora.</p>
     <div class="contact-links">
       <a href="mailto:julian.sanchez.o2003@gmail.com" class="contact-btn magnetic">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         Email
       </a>
-      <a href="https://www.linkedin.com/in/julian-sanchez-b087b0337/" target="_blank" class="contact-btn magnetic">
+      <a href="https://linkedin.com/in/julisanchezos" target="_blank" class="contact-btn magnetic">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
-      </a>
-      <a href="https://wa.me/5491131903402" target="_blank" class="contact-btn magnetic">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
       </a>
     </div>
   </div>
   <form class="contact-form reveal" id="contactForm">
     <div class="form-group">
-      <label for="name" data-en="Name" data-es="Nombre">Name</label>
-      <input type="text" id="name" name="name" data-placeholder-en="Your name" data-placeholder-es="Tu nombre" placeholder="Your name" required>
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      <input type="email" id="email" name="email" placeholder="tu@email.com" required>
     </div>
     <div class="form-group">
-      <label for="message" data-en="Message" data-es="Mensaje">Message</label>
-      <textarea id="message" name="message" rows="5" data-placeholder-en="Tell me about your project..." data-placeholder-es="Contame sobre tu proyecto..." placeholder="Tell me about your project..." required></textarea>
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="5" placeholder="Contame sobre tu proyecto..." required></textarea>
     </div>
-    <button type="submit" class="form-submit magnetic" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
+    <button type="submit" class="form-submit magnetic">Enviar mensaje</button>
   </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <span>&copy; 2026 Julian Sanchez.</span>
+  <span>&copy; 2026 Julian Sanchez. Todos los derechos reservados.</span>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/julian-sanchez-b087b0337/" target="_blank">LinkedIn</a>
+    <a href="https://linkedin.com/in/julisanchezos" target="_blank">LinkedIn</a>
     <a href="mailto:julian.sanchez.o2003@gmail.com">Email</a>
   </div>
 </footer>
 
 <script>
-let currentLang='en';
-const roles=['Available for projects','Flutter & Mobile Developer','Cross-platform Apps','Clean Architecture'];
-function setLang(lang){
-  currentLang=lang;
-  document.getElementById('langEN').classList.toggle('active',lang==='en');
-  document.getElementById('langES').classList.toggle('active',lang==='es');
-  document.documentElement.lang=lang;
-  document.querySelectorAll('[data-'+lang+']').forEach(el=>{
-    const val=el.getAttribute('data-'+lang);
-    if(val && el.tagName!=='INPUT' && el.tagName!=='TEXTAREA'){
-      el.innerHTML=val;
-    }
-  });
-  document.querySelectorAll('[data-placeholder-'+lang+']').forEach(el=>{
-    el.placeholder=el.getAttribute('data-placeholder-'+lang);
-  });
-  if(lang==='es'){
-    roles.length=0;
-    roles.push('Disponible para proyectos','Flutter & Mobile Developer','Apps Multiplataforma','Arquitectura Limpia');
-  } else {
-    roles.length=0;
-    roles.push('Available for projects','Flutter & Mobile Developer','Cross-platform Apps','Clean Architecture');
-  }
-}
-
+// ========== SPLASH SCREEN ==========
 window.addEventListener('load',()=>{
   setTimeout(()=>{
     document.getElementById('splash').classList.add('hidden');
@@ -604,6 +634,7 @@ window.addEventListener('load',()=>{
   },2200);
 });
 
+// ========== CUSTOM CURSOR ==========
 const cursor=document.getElementById('cursor');
 const dot=document.getElementById('cursorDot');
 let mx=0,my=0,cx=0,cy=0;
@@ -614,8 +645,10 @@ document.querySelectorAll('a,button,.skill-card,.project-card').forEach(el=>{
   el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
 });
 
+// ========== HERO TEXT ANIMATION ==========
 function animateHero(){
-  document.querySelectorAll('.hero h1 .line span').forEach((span,i)=>{
+  const lines=document.querySelectorAll('.hero h1 .line span');
+  lines.forEach((span,i)=>{
     setTimeout(()=>{
       span.style.transition='all .8s cubic-bezier(.16,1,.3,1)';
       span.style.transform='translateY(0)';
@@ -624,6 +657,8 @@ function animateHero(){
   });
 }
 
+// ========== TYPING ANIMATION ==========
+const roles=['Disponible para proyectos','Flutter & Dart Developer','Java & TypeScript','Python & IA','Automatización con n8n'];
 let roleIdx=0,charIdx=0,isDeleting=false;
 const typingEl=document.getElementById('typingRole');
 function typeRole(){
@@ -641,13 +676,16 @@ function typeRole(){
 }
 setTimeout(typeRole,3000);
 
+// ========== NAV SCROLL ==========
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled',window.scrollY>50);
   const h=document.documentElement.scrollHeight-window.innerHeight;
-  document.getElementById('progress').style.width=(window.scrollY/h)*100+'%';
+  const p=(window.scrollY/h)*100;
+  document.getElementById('progress').style.width=p+'%';
 });
 
+// ========== MOBILE MENU ==========
 document.getElementById('menuBtn').addEventListener('click',()=>{
   const links=document.getElementById('navLinks');
   links.classList.toggle('open');
@@ -660,21 +698,29 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
   });
 });
 
-const observer=new IntersectionObserver(entries=>{
+// ========== SCROLL REVEAL ==========
+const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
 },{threshold:.15,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-const counterObserver=new IntersectionObserver(entries=>{
+// ========== COUNTER ANIMATION ==========
+const counterObserver=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      e.target.querySelectorAll('.counter').forEach(c=>{
-        const target=+c.dataset.target,duration=1500,start=performance.now();
-        (function update(now){
-          const progress=Math.min((now-start)/duration,1);
-          c.textContent=Math.floor((1-Math.pow(1-progress,3))*target);
+      const counters=e.target.querySelectorAll('.counter');
+      counters.forEach(c=>{
+        const target=+c.dataset.target;
+        const duration=1500;
+        const start=performance.now();
+        function update(now){
+          const elapsed=now-start;
+          const progress=Math.min(elapsed/duration,1);
+          const eased=1-Math.pow(1-progress,3);
+          c.textContent=Math.floor(eased*target);
           if(progress<1)requestAnimationFrame(update);
-        })(performance.now());
+        }
+        requestAnimationFrame(update);
       });
       counterObserver.unobserve(e.target);
     }
@@ -682,27 +728,57 @@ const counterObserver=new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('.stats').forEach(s=>counterObserver.observe(s));
 
+// ========== MAGNETIC BUTTONS ==========
 document.querySelectorAll('.magnetic').forEach(btn=>{
   btn.addEventListener('mousemove',e=>{
-    const r=btn.getBoundingClientRect();
-    btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.15}px,${(e.clientY-r.top-r.height/2)*.15}px)`;
+    const rect=btn.getBoundingClientRect();
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+    btn.style.transform=`translate(${x*.15}px,${y*.15}px)`;
   });
   btn.addEventListener('mouseleave',()=>{btn.style.transform=''});
 });
 
+// ========== CONTACT FORM ==========
 document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
-  const n=document.getElementById('name').value,em=document.getElementById('email').value,msg=document.getElementById('message').value;
-  window.location.href=`mailto:julian.sanchez.o2003@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(n)}&body=${encodeURIComponent(`From: ${n} (${em})\n\n${msg}`)}`;
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const msg=document.getElementById('message').value;
+  const mailto=`mailto:julian.sanchez.o2003@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${msg}`)}`;
+  window.location.href=mailto;
 });
 
+// ========== SMOOTH SCROLL ==========
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
   });
 });
+
+// ========== USAL LOGO FALLBACK ==========
+(function(){
+  var logo = document.getElementById('usalLogo');
+  if(!logo) return;
+  var sources = [
+    'usal-logo.png',
+    'https://usal.edu.ar/sites/default/files/usal_logo.png',
+    'https://www.usal.edu.ar/themes/usal_theme/logo.png',
+    'https://pbs.twimg.com/profile_images/1143579498507169793/Uk5T6TKi_400x400.jpg'
+  ];
+  var idx = 0;
+  logo.onerror = function(){
+    idx++;
+    if(idx < sources.length){
+      this.src = sources[idx];
+    } else {
+      // Final fallback: styled text
+      this.parentElement.innerHTML = '<div style="width:140px;padding:20px;background:linear-gradient(135deg,#1a3a1a,#0d2a0d);border-radius:16px;border:2px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;box-shadow:0 8px 32px rgba(0,0,0,.3);text-align:center"><div style="font-family:serif;font-size:2rem;font-weight:700;color:#c9a84c;letter-spacing:2px">IHS</div><div style="width:40px;height:1px;background:rgba(201,168,76,.3)"></div><div style="font-size:.95rem;font-weight:700;color:#c9a84c;letter-spacing:4px">USAL</div><div style="font-family:serif;font-size:.5rem;color:rgba(201,168,76,.6);font-style:italic;line-height:1.3;padding:0 4px">Scientiam do menti<br>Cordi Virtutem</div></div>';
+    }
+  };
+})();
 </script>
 </body>
 </html>
