@@ -185,6 +185,8 @@ section{padding:120px 48px}
 .form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
 .form-submit{width:100%;padding:16px;background:var(--accent);color:#0a0a0a;border:none;border-radius:100px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s ease;font-family:var(--font)}
 .form-submit:hover{box-shadow:0 10px 40px rgba(201,243,29,.25);transform:translateY(-2px)}
+.form-group input.invalid,.form-group textarea.invalid{border-color:#ff5a5a}
+.field-error{display:block;margin-top:6px;font-size:.78rem;color:#ff5a5a;min-height:1em}
 
 /* FOOTER */
 footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.85rem;color:var(--text3)}
@@ -585,18 +587,22 @@ footer a:hover{color:var(--accent)}
       </a>
     </div>
   </div>
-  <form class="contact-form reveal" id="contactForm">
+  <form class="contact-form reveal" id="contactForm" novalidate>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
     <div class="form-group">
       <label for="name">Nombre</label>
-      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" minlength="2" maxlength="80" required>
+      <small class="field-error" data-for="name"></small>
     </div>
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+      <input type="email" id="email" name="email" placeholder="tu@email.com" maxlength="120" required>
+      <small class="field-error" data-for="email"></small>
     </div>
     <div class="form-group">
       <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="5" placeholder="Contame sobre tu proyecto..." required></textarea>
+      <textarea id="message" name="message" rows="5" placeholder="Contame sobre tu proyecto..." minlength="10" maxlength="2000" required></textarea>
+      <small class="field-error" data-for="message"></small>
     </div>
     <button type="submit" class="form-submit magnetic">Enviar mensaje</button>
   </form>
@@ -743,8 +749,52 @@ document.querySelectorAll('.magnetic').forEach(btn=>{
     return{ok:true}
   }
   function recordSend(){var s=getStore();s.lastSend=Date.now();s.count=(s.count||0)+1;s.lastDay=new Date().toDateString();setStore(s)}
+  var nameEl=document.getElementById('name');
+  var emailEl=document.getElementById('email');
+  var msgEl=document.getElementById('message');
+  var honeyEl=form.querySelector('input[name="_honey"]');
+  var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function setError(el,msg){
+    var err=form.querySelector('.field-error[data-for="'+el.id+'"]');
+    if(msg){el.classList.add('invalid');if(err)err.textContent=msg;return false}
+    el.classList.remove('invalid');if(err)err.textContent='';return true
+  }
+  function validateName(){
+    var v=nameEl.value.trim();
+    if(!v)return setError(nameEl,'Ingresá tu nombre.');
+    if(v.length<2)return setError(nameEl,'Mínimo 2 caracteres.');
+    if(v.length>80)return setError(nameEl,'Máximo 80 caracteres.');
+    return setError(nameEl,'')
+  }
+  function validateEmail(){
+    var v=emailEl.value.trim();
+    if(!v)return setError(emailEl,'Ingresá tu email.');
+    if(!EMAIL_RE.test(v))return setError(emailEl,'Email inválido.');
+    return setError(emailEl,'')
+  }
+  function validateMsg(){
+    var v=msgEl.value.trim();
+    if(!v)return setError(msgEl,'Escribí un mensaje.');
+    if(v.length<10)return setError(msgEl,'Contame un poco más (mín. 10 caracteres).');
+    if(v.length>2000)return setError(msgEl,'Máximo 2000 caracteres.');
+    return setError(msgEl,'')
+  }
+  nameEl.addEventListener('blur',validateName);
+  emailEl.addEventListener('blur',validateEmail);
+  msgEl.addEventListener('blur',validateMsg);
+  nameEl.addEventListener('input',function(){if(nameEl.classList.contains('invalid'))validateName()});
+  emailEl.addEventListener('input',function(){if(emailEl.classList.contains('invalid'))validateEmail()});
+  msgEl.addEventListener('input',function(){if(msgEl.classList.contains('invalid'))validateMsg()});
+
   form.addEventListener('submit',function(e){
     e.preventDefault();
+    var ok=[validateName(),validateEmail(),validateMsg()].every(Boolean);
+    if(!ok){
+      var firstInvalid=form.querySelector('.invalid');
+      if(firstInvalid)firstInvalid.focus();
+      return;
+    }
+    if(honeyEl&&honeyEl.value){return}
     var check=canSend();
     if(!check.ok){
       submitBtn.textContent=check.msg;
@@ -753,15 +803,40 @@ document.querySelectorAll('.magnetic').forEach(btn=>{
       setTimeout(function(){submitBtn.textContent='Enviar mensaje';submitBtn.style.background='';submitBtn.style.color=''},3000);
       return;
     }
-    var name=document.getElementById('name').value;
-    var email=document.getElementById('email').value;
-    var msg=document.getElementById('message').value;
-    var mailto='mailto:julian.sanchez.o2003@gmail.com?subject=Portfolio: '+encodeURIComponent(name)+' quiere contactarte&body='+encodeURIComponent('Nombre: '+name+'\nEmail: '+email+'\n\nMensaje:\n'+msg);
-    recordSend();
-    window.location.href=mailto;
-    submitBtn.textContent='¡Mensaje enviado!';
-    submitBtn.style.background='#48c78e';
-    setTimeout(function(){submitBtn.textContent='Enviar mensaje';submitBtn.style.background='';form.reset()},3000);
+    var data=new FormData();
+    data.append('name',nameEl.value.trim());
+    data.append('email',emailEl.value.trim());
+    data.append('message',msgEl.value.trim());
+    data.append('_subject','Nuevo contacto desde tu portfolio');
+    data.append('_template','table');
+    data.append('_captcha','false');
+    submitBtn.disabled=true;
+    submitBtn.textContent='Enviando...';
+    fetch('https://formsubmit.co/ajax/julian.sanchez.o2003@gmail.com',{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:data
+    }).then(function(r){return r.json()}).then(function(res){
+      if(res&&(res.success===true||res.success==='true')){
+        recordSend();
+        submitBtn.textContent='¡Mensaje enviado!';
+        submitBtn.style.background='#48c78e';
+        form.reset();
+      }else{
+        submitBtn.textContent='Error, intentá de nuevo';
+        submitBtn.style.background='#ff5a5a';
+      }
+    }).catch(function(){
+      submitBtn.textContent='Error de red';
+      submitBtn.style.background='#ff5a5a';
+    }).finally(function(){
+      setTimeout(function(){
+        submitBtn.disabled=false;
+        submitBtn.textContent='Enviar mensaje';
+        submitBtn.style.background='';
+        submitBtn.style.color='';
+      },3000);
+    });
   });
 })();
 
